@@ -2,10 +2,8 @@ FROM python
 
 WORKDIR /app
 
-COPY . .
+ADD . /app/
 
-RUN pip install --no-cache-dir -r requirements.txt
-
-EXPOSE 7040
+RUN pip install --trusted-host pypl.python.org flask
 
 CMD [ "python", "main.py"]
